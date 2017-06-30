@@ -14,6 +14,8 @@ Filtering options include:
 4. Coming soon (currently for US region) - configurable in strings file
 5. Favorites
 
+Note: pagination has been implemented for tmdb API. Currently capped at 10 pages for each category
+
 Clicking a movie's poster will take the user to a details screen which will display an individual movie's:
 1. title
 2. poster
