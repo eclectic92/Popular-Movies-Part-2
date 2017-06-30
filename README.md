@@ -31,6 +31,10 @@ Clicking a movie's poster will take the user to a details screen which will disp
 11. Any YouTube trailers associated on tmdb
 12. Any reviews listed on tmdb
 
+On the details screen, user can add or remove an individual movie from the local database of favorites, and 
+can also click the "share" icon to share out the first trailer for the movie if any have been 
+found on tmdb.
+
 User's state is saved on transition between activities, rotation, and when clicking the Android home button so that
 fewer network calls will be made to the API at the movie database. Additionally the app will alert the user if 
 there is no current network connection or it there is a problem retrieving a list of movies.
