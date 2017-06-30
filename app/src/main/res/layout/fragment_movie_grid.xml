@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.natalieryanudacity.android.popularmovies.MovieGridFragment">
+
+        <!-- recycler view for movie posters in grid -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_movielist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+
+        <!-- error messages -->
+        <LinearLayout
+            android:id="@+id/grid_error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/grid_error_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/error_text_size"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/grid_favorites_available"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/error_sub_heading_text_size"
+                android:textAlignment="center"
+                android:text="@string/grid_favorites_available"
+                android:gravity="center"
+                android:visibility="gone"/>
+
+            <Button
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:id="@+id/error_retry_btn"
+                android:layout_width="@dimen/error_button_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/colorDetailsText"
+                android:layout_marginTop="@dimen/movie_details_margin"
+                android:paddingStart="@dimen/error_button_horizontal_margin"
+                android:paddingEnd="@dimen/error_button_horizontal_margin"
+                android:text="@string/grid_retry_button"
+                android:clickable="true"
+                android:visibility="gone"/>
+
+            <Button
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:id="@+id/error_view_favorites_btn"
+                android:layout_width="@dimen/error_button_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/colorDetailsText"
+                android:layout_marginTop="@dimen/movie_details_margin"
+                android:paddingStart="@dimen/error_button_horizontal_margin"
+                android:paddingEnd="@dimen/error_button_horizontal_margin"
+                android:text="@string/grid_view_favorites_button"
+                android:clickable="true"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <!-- layout to hold loader spinner -->
+        <LinearLayout
+            android:id="@+id/grid_loader_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grid_loader_pb"
+                style="@android:style/Widget.ProgressBar.Large"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

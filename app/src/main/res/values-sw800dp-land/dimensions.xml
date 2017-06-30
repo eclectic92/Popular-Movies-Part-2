@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- layout dimensions -->
+	<dimen name="movie_details_loader_top">300dp</dimen>
+	<dimen name="movie_details_error_top">300dp</dimen>
+
+	<!-- image sizes -->
+	<dimen name="movie_details_banner_height">300dp</dimen>
+</resources>

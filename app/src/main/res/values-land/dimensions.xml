@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- layout dimensions -->
+    <dimen name="movie_details_toolbar_overlap">300dp</dimen>
+    <dimen name="movie_details_toolbar_height">400dp</dimen>
+    <dimen name="movie_details_outer_margin">10dp</dimen>
+    <dimen name="movie_details_scroller_top_margin">10dp</dimen>
+	<dimen name="movie_details_scroller_side_margin">6dp</dimen>
+	<dimen name="movie_details_banner_margin">10dp</dimen>
+	<dimen name="movie_details_banner_margin_top">8dp</dimen>
+	<dimen name="movie_details_loader_top">25dp</dimen>
+	<dimen name="movie_details_error_top">25dp</dimen>
+
+	<!-- image sizes -->
+	<dimen name="movie_details_poster_width">250dp</dimen>
+	<dimen name="movie_details_poster_height">375dp</dimen>
+</resources>

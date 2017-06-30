@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="allowed_trailer_types">
+        <item>@string/youtube_type_trailer</item>
+        <item>@string/youtube_type_teaser</item>
+    </string-array>
+</resources>

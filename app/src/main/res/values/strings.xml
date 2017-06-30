@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <!-- data binding formatters -->
+    <string name="details_item_divider">\u0020| %s</string>
+	<string name="details_star_rating">%s/10</string>
+	<string name="details_cast">Starring:\u0020%s</string>
+
+	<!-- error messages -->
+    <string name="grid_fetch_error">Looks like there was a problem</string>
+    <string name="grid_no_favorites_added">No favorites saved</string>
+    <string name="grid_favorites_available">(Saved favorites still available)</string>
+    <string name="grid_no_connection">No internet connection</string>
+    <string name="grid_retry_button">Tap to retry</string>
+    <string name="grid_view_favorites_button">View favorites</string>
+    <string name="details_unable_to_display">Please select a movie</string>
+
+    <!-- strings for selector menu -->
+    <string name="menu_popular">Popular</string>
+    <string name="menu_top_rated">Top Rated</string>
+    <string name="menu_now_playing">Now Playing</string>
+    <string name="menu_upcoming">Coming Soon</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="menu_sort_by">Sort by</string>
+
+    <!-- strings for details menu -->
+    <string name="menu_share_trailer">Share trailer</string>
+    <string name="menu_share_content_type">text/plain</string>
+
+    <!-- strings for details activity -->
+    <string name="details_reviews_title">Reviews</string>
+    <string name="details_poster_content_description">Movie poster</string>
+    <string name="details_banner_content_description">Movie banner</string>
+    <string name="details_rating_icon_content_description">MPAA Rating</string>
+    <string name="details_rating_star_content_description">Vote rating</string>
+    <string name="details_review_author">by</string>
+    <string name="details_favorite">Favorite</string>
+    <string name="details_unfavorite">Unfavorite</string>
+    <string name="details_favorite_added">Successfully added to favorites</string>
+    <string name="details_favorite_removed">Successfully removed from favorites</string>
+
+    <!-- tmdb paths -->
+    <string name="tmdb_poster_base_url">http://image.tmdb.org/t/p/w185</string>
+    <string name="tmdb_banner_base_url">http://image.tmdb.org/t/p/w500</string>
+
+    <!-- youtube trailers -->
+    <string name="youtube_web_path">http://www.youtube.com/watch?v=</string>
+    <string name="youtube_app_path">vnd.youtube:</string>
+    <string name="youtube_site_name">YouTube</string>
+    <string name="youtube_thumbnail_path">http://img.youtube.com/vi/{0}/default.jpg</string>
+    <string name="youtube_thumbnail_content_description">Movie trailer</string>
+    <string name="youtube_icon_content_description">Play</string>
+    <string name="youtube_type_trailer">Trailer</string>
+    <string name="youtube_type_teaser">Teaser</string>
+
+    <!-- content authority -->
+    <string name="content_authority">com.natalieryanudacity.android.popularmovies</string>
+
+    <!-- region for tmdb -->
+    <string name="tmdb_region">US</string>
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="?android:attr/selectableItemBackground"
+		android:clickable="true">
+
+		<!-- review author -->
+		<TextView
+			android:id="@+id/review_author_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="@dimen/movie_details_summary_text_size"/>
+
+		<!-- review content -->
+		<TextView
+			android:id="@+id/review_content_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:ellipsize="end"
+			android:maxLines="@integer/movie_details_review_max_lines"
+			android:maxLength="@integer/movie_details_review_max_length"
+			android:layout_marginTop="@dimen/movie_details_inner_margin"
+			android:layout_marginBottom="@dimen/movie_details_review_bottom_margin"
+			android:textSize="@dimen/movie_details_summary_text_size"/>
+	</LinearLayout>
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- layout dimensions -->
+    <dimen name="movie_grid_margin_spacing">8dp</dimen>
+    <dimen name="movie_grid_title_spacing">20dp</dimen>
+    <dimen name="movie_details_toolbar_height">230dp</dimen>
+    <dimen name="movie_details_margin">10dp</dimen>
+	<dimen name="movie_details_banner_margin">10dp</dimen>
+	<dimen name="movie_details_banner_margin_top">8dp</dimen>
+	<dimen name="movie_details_scroller_top_margin">2dp</dimen>
+	<dimen name="movie_details_scroller_side_margin">0dp</dimen>
+	<dimen name="movie_details_outer_margin">0dp</dimen>
+    <dimen name="movie_details_toolbar_overlap">0dp</dimen>
+    <dimen name="movie_details_loader_top">150dp</dimen>
+    <dimen name="movie_details_error_top">150dp</dimen>
+    <dimen name="movie_details_inner_margin">5dp</dimen>
+    <dimen name="movie_details_bottom_margin">25dp</dimen>
+    <dimen name="movie_details_star_icon_size">24dp</dimen>
+    <dimen name="movie_details_star_icon_padding_top">0dp</dimen>
+    <dimen name="movie_details_star_icon_padding_end">3dp</dimen>
+    <dimen name="movie_details_star_icon_margin_end">-2dp</dimen>
+    <dimen name="movie_details_section_divider_height">1dp</dimen>
+    <dimen name="movie_details_review_bottom_margin">20dp</dimen>
+
+    <!--text sizes -->
+    <dimen name="error_text_size">24sp</dimen>
+    <dimen name="error_sub_heading_text_size">20sp</dimen>
+    <dimen name="movie_grid_title_text_size">20sp</dimen>
+    <dimen name="movie_details_summary_text_size">18sp</dimen>
+    <dimen name="movie_details_header_text_size">24sp</dimen>
+    <dimen name="movie_details_small_text_size">16sp</dimen>
+    <dimen name="movie_details_summary_title_text_size">20sp</dimen>
+    <dimen name="movie_details_expanded_toolbar_text_size">28sp</dimen>
+
+    <!-- image sizes -->
+	<dimen name="movie_details_poster_width">125dp</dimen>
+	<dimen name="movie_details_poster_height">187dp</dimen>
+	<dimen name="movie_details_banner_height">230dp</dimen>
+	<dimen name="youtube_trailer_height">100dp</dimen>
+    <dimen name="youtube_trailer_width">150dp</dimen>
+    <dimen name="youtube_icon_padding">25dp</dimen>
+	<dimen name="youtube_icon_start_padding">5dp</dimen>
+
+    <!-- buttons -->
+    <dimen name="error_button_horizontal_margin">20dp</dimen>
+    <dimen name="error_button_width">160dp</dimen>
+    <dimen name="favorite_button_width">160dp</dimen>
+    <dimen name="favorite_button_top_margin">35dp</dimen>
+    <dimen name="favorite_button_padding_start">15dp</dimen>
+    <dimen name="favorite_button_padding_end">18dp</dimen>
+    <dimen name="favorite_button_text_size">16sp</dimen>
+    <dimen name="favorite_button_drawable_padding">5dp</dimen>
+</resources>

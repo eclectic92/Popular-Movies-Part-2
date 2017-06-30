@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/movie_poster_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="0dp"
+    android:layout_gravity="center">
+    <ImageView
+        android:id="@+id/movie_poster_image"
+        android:contentDescription="@string/details_poster_content_description"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:padding="0dp"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:id="@+id/movie_poster_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/movie_grid_title_text_size"
+        android:textColor="@color/colorDetailsText"
+        android:paddingStart="@dimen/movie_grid_title_spacing"
+        android:paddingEnd="@dimen/movie_grid_title_spacing"
+        android:visibility="invisible"/>
+</FrameLayout>

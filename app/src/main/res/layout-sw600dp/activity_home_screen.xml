@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:baselineAligned="false"
+			  android:orientation="horizontal"
+			  tools:ignore="InconsistentLayout"
+			  tools:context="com.natalieryanudacity.android.popularmovies.HomeScreenActivity">
+
+	<!-- movie grid fragment -->
+	<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:id="@+id/home_screen_fragment"
+			  android:name="com.natalieryanudacity.android.popularmovies.MovieGridFragment"
+			  tools:layout="@layout/fragment_movie_grid"
+			  android:layout_width="0dp"
+			  android:layout_weight="0.5"
+			  android:layout_height="match_parent"/>
+
+	<!--  divider -->
+	<View
+		android:layout_width="@dimen/movie_details_section_divider_height"
+		android:layout_height="match_parent"
+		android:background="@color/colorDivider" />
+
+
+	<android.support.v4.widget.NestedScrollView
+		android:id="@+id/details_container"
+		android:layout_width="0dp"
+		android:layout_weight="0.5"
+		android:layout_height="match_parent"/>
+
+</LinearLayout>

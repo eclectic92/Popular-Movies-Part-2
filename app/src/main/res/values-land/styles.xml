@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ExpandedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/movie_details_expanded_toolbar_text_size</item>
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+</resources>
