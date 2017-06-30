@@ -26,6 +26,8 @@ Clicking a movie's poster will take the user to a details screen which will disp
 8. plot overview if available
 9. movie's genres if available
 10. cast list if available
+11. Any YouTube trailers associated on tmdb
+12. Any reviews listed on tmdb
 
 User's state is saved on transition between activities, rotation, and when clicking the Android home button so that
 fewer network calls will be made to the API at the movie database. Additionally the app will alert the user if 
@@ -38,10 +40,12 @@ If user in on a device with a minimum display width of greather than 600dp, a tw
 will be displayed with movie grid on the left and details on the right
 
 ###Screenshots
+
 All views have been adjusted for portrait/landscape and device size buckets (see screenshots in 
 the github wiki for this project.)
 
 ###Attributions
+
 UI Styling:
 Layout and elements mixed and matched from suggested UI, but mostly inspired by Plex
 and thetvdb.com
