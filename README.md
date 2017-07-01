@@ -41,8 +41,9 @@ User's state is saved on transition between activities, rotation, and when click
 fewer network calls will be made to the API at the movie database. Additionally the app will alert the user if 
 there is no current network connection or it there is a problem retrieving a list of movies.
 
-Favorites can be saved to a local db, along with their poster an banner images so all 
-data for them is avilable in offline mode.
+Favorites can be saved to or removed from a local db by clicking the "heart" button.
+All data is saved, along with their poster and banner images so everything except trailers
+and reviews are available offline.
 
 If user in on a device with a minimum display width of greather than 600dp, a two-pane mode
 will be displayed with movie grid on the left and details on the right
