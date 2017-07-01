@@ -16,95 +16,128 @@ import java.util.ArrayList;
 
 /**
  * Created by natalier258 on 6/16/17.
- *
+ * <p>
  * Adapter to manage trailers from tmdb
  */
 
 @SuppressWarnings("unused")
-public class TmdbTrailerAdapter extends RecyclerView.Adapter<TmdbTrailerAdapter.TmdbTrailerAdapterViewHolder> {
-    private ArrayList<TmdbTrailer> mTrailerList;
-    private TrailerClickListener clickListener;
+public class TmdbTrailerAdapter extends RecyclerView.Adapter<TmdbTrailerAdapter.TmdbTrailerAdapterViewHolder>
+{
+	private ArrayList<TmdbTrailer> mTrailerList;
+	private TrailerClickListener clickListener;
 	private TrailerItemBinding mBinder;
 
-    /**
-     * Default Constructor
-     */
-    TmdbTrailerAdapter(){
 
-    }
+	/**
+	 * Default Constructor
+	 */
+	TmdbTrailerAdapter()
+	{
 
-	interface TrailerClickListener {
-        void onTrailerClick(View view, int position);
-    }
+	}
 
-    /**
-     * View holder for recycler view item
-     */
-    class TmdbTrailerAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TmdbTrailerAdapterViewHolder(View view) {
-            super(view);
-            view.setOnClickListener(this);
-        }
+	interface TrailerClickListener
+	{
+		void onTrailerClick(View view, int position);
+	}
 
-        @Override
-        public void onClick(View view) {
-            if (clickListener != null) clickListener.onTrailerClick(view, getAdapterPosition());
-        }
 
-    }
+	/**
+	 * View holder for recycler view item
+	 */
+	class TmdbTrailerAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+	{
 
-    @Override
-    public TmdbTrailerAdapter.TmdbTrailerAdapterViewHolder onCreateViewHolder(
-            ViewGroup viewGroup, int viewType) {
+		TmdbTrailerAdapterViewHolder(View view)
+		{
+			super(view);
+			view.setOnClickListener(this);
+		}
+
+
+		@Override
+		public void onClick(View view)
+		{
+			if (clickListener!=null)
+			{
+				clickListener.onTrailerClick(view, getAdapterPosition());
+			}
+		}
+
+	}
+
+
+	@Override
+	public TmdbTrailerAdapter.TmdbTrailerAdapterViewHolder onCreateViewHolder(
+			ViewGroup viewGroup, int viewType)
+	{
 
 		//set our bound layout
-        Context context = viewGroup.getContext();
-        int layoutIdForListItem = R.layout.trailer_item;
-        LayoutInflater inflater = LayoutInflater.from(context);
-		mBinder = DataBindingUtil.inflate(inflater,layoutIdForListItem,viewGroup,false);
-		View view = mBinder.getRoot();
-        return new TmdbTrailerAdapter.TmdbTrailerAdapterViewHolder(view);
-    }
+		Context context=viewGroup.getContext();
+		int layoutIdForListItem=R.layout.trailer_item;
+		LayoutInflater inflater=LayoutInflater.from(context);
+		mBinder=DataBindingUtil.inflate(inflater, layoutIdForListItem, viewGroup, false);
+		View view=mBinder.getRoot();
+		return new TmdbTrailerAdapter.TmdbTrailerAdapterViewHolder(view);
+	}
 
-    @Override
-    public void onBindViewHolder(TmdbTrailerAdapter.TmdbTrailerAdapterViewHolder viewHolder,
-                                 int position) {
-		final Context context = mBinder.youtubeTrailerThumbnail.getContext();
-		TmdbTrailer trailer = mTrailerList.get(position);
+
+	@Override
+	public void onBindViewHolder(TmdbTrailerAdapter.TmdbTrailerAdapterViewHolder viewHolder,
+								 int position)
+	{
+		final Context context=mBinder.youtubeTrailerThumbnail.getContext();
+		TmdbTrailer trailer=mTrailerList.get(position);
 		mBinder.setTrailer(trailer);
-		String thumbnailPath = context.getString(R.string.youtube_thumbnail_path)
-                .replace("{0}",trailer.getTrailerKey());
+		String thumbnailPath=context.getString(R.string.youtube_thumbnail_path)
+				.replace("{0}", trailer.getTrailerKey());
 
-        Picasso.with(context)
-                .load(thumbnailPath)
-                .into(mBinder.youtubeTrailerThumbnail);
-    }
+		Picasso.with(context)
+				.load(thumbnailPath)
+				.into(mBinder.youtubeTrailerThumbnail);
+	}
 
-    @Override
-    public int getItemCount() {
-        if (null == mTrailerList) return 0;
-        return mTrailerList.size();
-    }
 
-	TmdbTrailer getItem(int position) {
-        if(mTrailerList != null) {
-            return mTrailerList.get(position);
-        }else{
-            return new TmdbTrailer();
-        }
-    }
+	@Override
+	public int getItemCount()
+	{
+		if (null==mTrailerList)
+		{
+			return 0;
+		}
+		return mTrailerList.size();
+	}
 
-    public ArrayList<TmdbTrailer> getTrailerList() {
-        return mTrailerList;
-    }
 
-    void setTrailerData(ArrayList<TmdbTrailer> reviewData) {
-        mTrailerList = reviewData;
-        notifyDataSetChanged();
-    }
+	TmdbTrailer getItem(int position)
+	{
+		if (mTrailerList!=null)
+		{
+			return mTrailerList.get(position);
+		}
+		else
+		{
+			return new TmdbTrailer();
+		}
+	}
 
-	void setClickListener(TmdbTrailerAdapter.TrailerClickListener itemClickListener) {
-        this.clickListener = itemClickListener;
-    }
+
+	public ArrayList<TmdbTrailer> getTrailerList()
+	{
+		return mTrailerList;
+	}
+
+
+	void setTrailerData(ArrayList<TmdbTrailer> reviewData)
+	{
+		mTrailerList=reviewData;
+		notifyDataSetChanged();
+	}
+
+
+	void setClickListener(TmdbTrailerAdapter.TrailerClickListener itemClickListener)
+	{
+		this.clickListener=itemClickListener;
+	}
 }

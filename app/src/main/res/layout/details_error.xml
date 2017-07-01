@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
 	xmlns:android="http://schemas.android.com/apk/res/android">
+
 	<LinearLayout
 		android:id="@+id/detail_error_layout"
 		android:layout_width="fill_parent"
@@ -8,6 +9,7 @@
 		android:orientation="vertical"
 		android:gravity="fill_vertical"
 		android:visibility="gone">
+
 		<TextView
 			android:id="@+id/no_movies_tv"
 			android:layout_width="match_parent"

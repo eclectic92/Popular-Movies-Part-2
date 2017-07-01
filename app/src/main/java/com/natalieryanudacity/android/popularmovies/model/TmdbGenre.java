@@ -4,21 +4,26 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by natalier258 on 6/14/17.
- *
+ * <p>
  * Pojo for tmdb genre details
  */
 
 @SuppressWarnings("unused")
-class TmdbGenre {
+class TmdbGenre
+{
 
-    @SerializedName("name")
-    private String mName;
+	@SerializedName("name")
+	private String mName;
 
-    public void setName (String name){
-        this.mName = name;
-    }
 
-    public String getName(){
-        return mName;
-    }
+	public void setName(String name)
+	{
+		this.mName=name;
+	}
+
+
+	public String getName()
+	{
+		return mName;
+	}
 }

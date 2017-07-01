@@ -9,144 +9,185 @@ import com.natalieryanudacity.android.popularmovies.model.TmdbMovie;
 
 /**
  * Created by natalier258 on 6/20/17.
- *
+ * <p>
  * Async task to add favorite to tmdbmovies.db
  */
 
-class AddFavoriteAsyncTask  extends AsyncTask<TmdbMovie, Void, Void> {
+class AddFavoriteAsyncTask extends AsyncTask<TmdbMovie, Void, Void>
+{
 
-    private final Context mContext;
-    private final AddFavoriteListener mFavoriteListener;
+	private final Context mContext;
+	private final AddFavoriteListener mFavoriteListener;
 
-    public AddFavoriteAsyncTask(Context context, AddFavoriteListener addFavoriteListener){
-        this.mContext = context;
-        this.mFavoriteListener= addFavoriteListener;
-    }
 
-    /**
-     * Listener for async task completion
-     * Must be implemented by hosting class
-     */
-    interface AddFavoriteListener {
-        void onFavoriteAdded();
-    }
+	public AddFavoriteAsyncTask(Context context, AddFavoriteListener addFavoriteListener)
+	{
+		this.mContext=context;
+		this.mFavoriteListener=addFavoriteListener;
+	}
 
-    @Override
-    protected Void doInBackground(TmdbMovie... params) {
 
-        if (params.length == 0) {
-            return null;
-        }
+	/**
+	 * Listener for async task completion
+	 * Must be implemented by hosting class
+	 */
+	interface AddFavoriteListener
+	{
+		void onFavoriteAdded();
+	}
 
-        // if we don't have a movie, nothing to do
 
-        TmdbMovie tmdbMovie = params[0];
-        ContentValues favoriteMovieValues = new ContentValues();
+	@Override
+	protected Void doInBackground(TmdbMovie... params)
+	{
 
-        // some movie detail info might be null, so let's extract it here for
-        // easier evaluation later
-        String posterPath = tmdbMovie.getPosterPath();
-        String bannerPath = tmdbMovie.getBannerPath();
-        String overview = tmdbMovie.getOverview();
-        String tagline = tmdbMovie.getTagline();
-        String runningTime = tmdbMovie.getRunningTime();
-        String genres = tmdbMovie.getGenres();
-        String certification = tmdbMovie.getCertification();
-        String posterImagePath = tmdbMovie.getPosterImagePath();
-        String bannerImagePath = tmdbMovie.getBannerImagePath();
-        String castList = tmdbMovie.getCastList();
+		if (params.length==0)
+		{
+			return null;
+		}
 
-        favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_TMDB_ID,
-                tmdbMovie.getId());
+		// if we don't have a movie, nothing to do
 
-        favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_TITLE,
-                tmdbMovie.getMovieTitle());
+		TmdbMovie tmdbMovie=params[0];
+		ContentValues favoriteMovieValues=new ContentValues();
 
-        favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_RELEASE_DATE,
-                tmdbMovie.getRawReleaseDate());
+		// some movie detail info might be null, so let's extract it here for
+		// easier evaluation later
+		String posterPath=tmdbMovie.getPosterPath();
+		String bannerPath=tmdbMovie.getBannerPath();
+		String overview=tmdbMovie.getOverview();
+		String tagline=tmdbMovie.getTagline();
+		String runningTime=tmdbMovie.getRunningTime();
+		String genres=tmdbMovie.getGenres();
+		String certification=tmdbMovie.getCertification();
+		String posterImagePath=tmdbMovie.getPosterImagePath();
+		String bannerImagePath=tmdbMovie.getBannerImagePath();
+		String castList=tmdbMovie.getCastList();
 
-        if(posterPath != null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_POSTER_PATH,
-                    tmdbMovie.getPosterPath());
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_POSTER_PATH);
-        }
+		favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_TMDB_ID,
+				tmdbMovie.getId());
 
-        if(bannerPath !=null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_BANNER_PATH,
-                    tmdbMovie.getBannerPath());
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_BANNER_PATH);
+		favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_TITLE,
+				tmdbMovie.getMovieTitle());
 
-        }
+		favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_RELEASE_DATE,
+				tmdbMovie.getRawReleaseDate());
 
-        if(overview != null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_OVERVIEW, overview);
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_OVERVIEW);
-        }
+		if (posterPath!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_POSTER_PATH,
+					tmdbMovie.getPosterPath());
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_POSTER_PATH);
+		}
 
-        if(tagline != null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_TAGLINE, tagline);
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_TAGLINE);
-        }
+		if (bannerPath!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_BANNER_PATH,
+					tmdbMovie.getBannerPath());
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_BANNER_PATH);
 
-        favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_VOTE_AVERAGE,
-                tmdbMovie.getVoteAverage());
+		}
 
-        if(runningTime != null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
-                    .COLUMN_RUNNING_TIME, runningTime);
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_RUNNING_TIME);
-        }
+		if (overview!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_OVERVIEW, overview);
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_OVERVIEW);
+		}
 
-        if(genres != null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_GENRES, genres);
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_GENRES);
-        }
+		if (tagline!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_TAGLINE, tagline);
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_TAGLINE);
+		}
 
-        if(certification !=null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
-                    .COLUMN_CERTIFICATION, certification);
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_CERTIFICATION);
-        }
+		favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_VOTE_AVERAGE,
+				tmdbMovie.getVoteAverage());
 
-        if(posterImagePath != null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
-                    .COLUMN_POSTER_FILE_PATH, posterImagePath);
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_POSTER_FILE_PATH);
-        }
+		if (runningTime!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
+					.COLUMN_RUNNING_TIME, runningTime);
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_RUNNING_TIME);
+		}
 
-        if(bannerImagePath != null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
-                    .COLUMN_BANNER_FILE_PATH, bannerImagePath);
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_BANNER_FILE_PATH);
-        }
+		if (genres!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry.COLUMN_GENRES, genres);
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_GENRES);
+		}
 
-        if(castList != null){
-            favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
-                    .COLUMN_CAST_LIST, castList);
-        }else{
-            favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_CAST_LIST);
-        }
+		if (certification!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
+					.COLUMN_CERTIFICATION, certification);
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_CERTIFICATION);
+		}
 
-        if(mContext != null && mContext.getContentResolver() != null){
-             mContext.getContentResolver().insert(
-                    TmdbMovieContract.TmdbMovieEntry.CONTENT_URI,
-                    favoriteMovieValues
-            );
-        }
-        return null;
-    }
+		if (posterImagePath!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
+					.COLUMN_POSTER_FILE_PATH, posterImagePath);
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_POSTER_FILE_PATH);
+		}
 
-    @Override
-    protected void onPostExecute(Void aVoid) {
-        mFavoriteListener.onFavoriteAdded();
-    }
+		if (bannerImagePath!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
+					.COLUMN_BANNER_FILE_PATH, bannerImagePath);
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_BANNER_FILE_PATH);
+		}
+
+		if (castList!=null)
+		{
+			favoriteMovieValues.put(TmdbMovieContract.TmdbMovieEntry
+					.COLUMN_CAST_LIST, castList);
+		}
+		else
+		{
+			favoriteMovieValues.putNull(TmdbMovieContract.TmdbMovieEntry.COLUMN_CAST_LIST);
+		}
+
+		if (mContext!=null && mContext.getContentResolver()!=null)
+		{
+			mContext.getContentResolver().insert(
+					TmdbMovieContract.TmdbMovieEntry.CONTENT_URI,
+					favoriteMovieValues
+			);
+		}
+		return null;
+	}
+
+
+	@Override
+	protected void onPostExecute(Void aVoid)
+	{
+		mFavoriteListener.onFavoriteAdded();
+	}
 }

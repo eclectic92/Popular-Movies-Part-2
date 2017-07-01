@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
 	xmlns:android="http://schemas.android.com/apk/res/android">
+
 	<data>
-		<variable name="trailer" type="com.natalieryanudacity.android.popularmovies.model.TmdbTrailer"/>
+
+		<variable
+			name="trailer"
+			type="com.natalieryanudacity.android.popularmovies.model.TmdbTrailer"/>
 	</data>
+
 	<LinearLayout
 		xmlns:tools="http://schemas.android.com/tools"
 		android:orientation="vertical"
@@ -25,6 +30,7 @@
 			<FrameLayout
 				android:layout_height="@dimen/youtube_trailer_height"
 				android:layout_width="@dimen/youtube_trailer_width">
+
 				<ImageView
 					android:id="@+id/youtube_trailer_thumbnail"
 					android:layout_width="match_parent"

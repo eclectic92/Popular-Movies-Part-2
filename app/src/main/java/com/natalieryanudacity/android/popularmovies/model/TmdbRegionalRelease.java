@@ -6,26 +6,33 @@ import java.util.ArrayList;
 
 /**
  * Created by natalier258 on 6/16/17.
- *
+ * <p>
  * Pojo for tmdb regional release
  */
 
 @SuppressWarnings("unused")
-class TmdbRegionalRelease {
-    @SerializedName("iso_3166_1")
-    private String mCountryCode;
-    @SerializedName("release_dates")
-    private final ArrayList<TmdbRelease> mSingleReleases = new ArrayList<>();
+class TmdbRegionalRelease
+{
+	@SerializedName("iso_3166_1")
+	private String mCountryCode;
+	@SerializedName("release_dates")
+	private final ArrayList<TmdbRelease> mSingleReleases=new ArrayList<>();
 
-    void setCountryCode(String countryCode){
-        this.mCountryCode = countryCode;
-    }
 
-    String getCountryCode(){
-        return mCountryCode;
-    }
+	void setCountryCode(String countryCode)
+	{
+		this.mCountryCode=countryCode;
+	}
 
-    ArrayList<TmdbRelease> getReleaseDates(){
-        return mSingleReleases;
-    }
+
+	String getCountryCode()
+	{
+		return mCountryCode;
+	}
+
+
+	ArrayList<TmdbRelease> getReleaseDates()
+	{
+		return mSingleReleases;
+	}
 }

@@ -6,18 +6,21 @@ import java.util.ArrayList;
 
 /**
  * Created by natalier258 on 6/14/17.
- *
+ * <p>
  * Pojo for tmdb credits info
  */
 
 @SuppressWarnings("unused")
 
-public class TmdbCast {
+public class TmdbCast
+{
 
 	@SerializedName("cast")
-	private final ArrayList<TmdbCastMember> mCastList = new ArrayList<>();
+	private final ArrayList<TmdbCastMember> mCastList=new ArrayList<>();
 
-	ArrayList<TmdbCastMember> getCastList(){
+
+	ArrayList<TmdbCastMember> getCastList()
+	{
 		return mCastList;
 	}
 }
