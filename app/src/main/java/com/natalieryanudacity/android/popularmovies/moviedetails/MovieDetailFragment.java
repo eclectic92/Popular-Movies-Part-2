@@ -77,8 +77,10 @@ import retrofit2.Response;
  * tmdb for any associated trailers and reviews
  */
 public class MovieDetailFragment extends Fragment implements TmdbReviewAdapter.ReviewClickListener,
-															 TmdbTrailerAdapter.TrailerClickListener, AddFavoriteAsyncTask.AddFavoriteListener,
-															 RemoveFavoriteAsyncTask.RemoveFavoriteListener, LoaderManager.LoaderCallbacks<Cursor>,
+															 TmdbTrailerAdapter.TrailerClickListener,
+															 AddFavoriteAsyncTask.AddFavoriteListener,
+															 RemoveFavoriteAsyncTask.RemoveFavoriteListener,
+															 LoaderManager.LoaderCallbacks<Cursor>,
 															 UpdateFavoriteAsyncTask.UpdateFavoriteListener
 {
 
@@ -479,7 +481,7 @@ public class MovieDetailFragment extends Fragment implements TmdbReviewAdapter.R
 
 
 	/**
-	 * render the MPAA "rated" logo when filed is bound
+	 * render the MPAA "rated" logo when fieed is bound
 	 *
 	 * @param view          image view to load
 	 * @param certification movie certification
@@ -489,6 +491,7 @@ public class MovieDetailFragment extends Fragment implements TmdbReviewAdapter.R
 	{
 		if (certification!=null && !certification.isEmpty())
 		{
+			view.setVisibility(View.VISIBLE);
 			certification=certification.toUpperCase(Locale.ROOT);
 			switch (certification)
 			{
@@ -513,7 +516,7 @@ public class MovieDetailFragment extends Fragment implements TmdbReviewAdapter.R
 							view.getContext().getDrawable(R.drawable.rated_nc_17));
 					break;
 				default:
-					//no image to load
+					view.setVisibility(View.GONE);
 			}
 		}
 	}

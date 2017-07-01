@@ -196,51 +196,39 @@
 								android:layout_width="match_parent"
 								android:layout_height="@dimen/movie_details_summary_text_size"
 								android:layout_marginTop="@dimen/movie_details_inner_margin"
+								android:layout_marginBottom="@dimen/movie_details_inner_margin"
 								android:contentDescription="@string/details_rating_icon_content_description"
 								android:paddingEnd="0dp"
 								android:paddingStart="0dp"
 								android:scaleType="fitEnd"
-								android:visibility="@{(movie.certification != null &amp;&amp; !movie.certification.isEmpty) ? View.VISIBLE : View.GONE}"
+								android:visibility="gone"
 								app:certificationLogo="@{movie.certification}"/>
 
 							<!-- add to favorites button -->
-							<Button
+							<ImageView
 								android:id="@+id/add_to_favorites_btn"
-								style="@style/Base.Widget.AppCompat.Button.Colored"
-								android:layout_width="@dimen/favorite_button_width"
-								android:layout_height="wrap_content"
-								android:layout_gravity="center_horizontal"
-								android:layout_marginTop="@dimen/favorite_button_top_margin"
-								android:backgroundTint="@color/colorAccent"
-								android:drawablePadding="@dimen/favorite_button_drawable_padding"
-								android:drawableStart="@drawable/ic_add_circle_outline_20dp"
-								android:gravity="center"
-								android:paddingEnd="@dimen/favorite_button_padding_end"
-								android:paddingStart="@dimen/favorite_button_padding_start"
-								android:text="@string/details_favorite"
-								android:textColor="@color/colorDetailsText"
-								android:textSize="@dimen/favorite_button_text_size"
+								android:layout_marginTop="@dimen/movie_details_inner_margin"
+								android:layout_width="@dimen/favorite_button_size"
+								android:layout_height="@dimen/favorite_button_size"
+								android:layout_marginStart="0dp"
+								android:layout_marginEnd="@dimen/favorite_button_margin_end"
+								android:contentDescription="@string/details_favorite"
+								android:layout_gravity="end"
+								android:src="@drawable/ic_favorite_border_black_24dp"
 								android:visibility="gone"/>
 
 							<!-- remove from favorites button -->
-							<Button
+							<ImageView
 								android:id="@+id/remove_from_favorites_btn"
-								style="@style/Base.Widget.AppCompat.Button.Colored"
-								android:layout_width="@dimen/favorite_button_width"
-								android:layout_height="wrap_content"
-								android:layout_gravity="center_horizontal"
-								android:layout_marginTop="@dimen/favorite_button_top_margin"
-								android:backgroundTint="@color/colorSecondaryButton"
-								android:drawablePadding="@dimen/favorite_button_drawable_padding"
-								android:drawableStart="@drawable/ic_remove_circle_outline_20dp"
-								android:gravity="center"
-								android:paddingEnd="@dimen/favorite_button_padding_end"
-								android:paddingStart="@dimen/favorite_button_padding_start"
-								android:text="@string/details_unfavorite"
-								android:textColor="@color/colorDetailsText"
-								android:textSize="@dimen/favorite_button_text_size"
+								android:layout_marginTop="@dimen/movie_details_inner_margin"
+								android:layout_width="@dimen/favorite_button_size"
+								android:layout_height="@dimen/favorite_button_size"
+								android:layout_marginStart="0dp"
+								android:layout_marginEnd="@dimen/favorite_button_margin_end"
+								android:contentDescription="@string/details_unfavorite"
+								android:layout_gravity="end"
+								android:src="@drawable/ic_favorite_black_24dp"
 								android:visibility="gone"/>
-
 						</LinearLayout>
 					</LinearLayout>
 

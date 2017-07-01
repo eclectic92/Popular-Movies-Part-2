@@ -44,10 +44,6 @@
     <!-- buttons -->
     <dimen name="error_button_horizontal_margin">20dp</dimen>
     <dimen name="error_button_width">160dp</dimen>
-    <dimen name="favorite_button_width">160dp</dimen>
-    <dimen name="favorite_button_top_margin">35dp</dimen>
-    <dimen name="favorite_button_padding_start">15dp</dimen>
-    <dimen name="favorite_button_padding_end">18dp</dimen>
-    <dimen name="favorite_button_text_size">16sp</dimen>
-    <dimen name="favorite_button_drawable_padding">5dp</dimen>
+	<dimen name="favorite_button_size">32dp</dimen>
+	<dimen name="favorite_button_margin_end">-3dp</dimen>
 </resources>
