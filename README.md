@@ -46,7 +46,7 @@ All data is saved, along with their poster and banner images so everything excep
 and reviews are available offline.
 
 If user in on a device with a minimum display width of greather than 600dp, a two-pane mode
-will be displayed with movie grid on the left and details on the right
+will be displayed with movie grid on the left and details on the right.
 
 ###Screenshots
 
