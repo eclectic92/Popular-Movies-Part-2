@@ -195,8 +195,6 @@ public class MovieGridFragment extends Fragment implements TmdbMovieAdapter.Item
 
         mScrollListener = createScrollingListener();
 
-		mBinder.recyclerviewMovielist.addOnScrollListener(mScrollListener);
-
         // create the adapter and bind it to the grid
         mTmdbMovieAdapter = new TmdbMovieAdapter();
         mTmdbMovieAdapter.setClickListener(this);
@@ -245,6 +243,7 @@ public class MovieGridFragment extends Fragment implements TmdbMovieAdapter.Item
             if(mSortType.equals(TmdbInterface.SORT_FAVORITES)){
                 viewFavorites();
             }else{
+				mBinder.recyclerviewMovielist.addOnScrollListener(mScrollListener);
                 loadMovieSearchData();
             }
         }
@@ -302,17 +301,19 @@ public class MovieGridFragment extends Fragment implements TmdbMovieAdapter.Item
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        //detstroy the favories loader if we're not going to view them right noe
+        //detstroy the favories loader if we're on favorites right now
         if(mSortType.equals(TmdbInterface.SORT_FAVORITES)) {
             getActivity().getSupportLoaderManager().destroyLoader(FAVORITES_LOADER);
-			mBinder.recyclerviewMovielist.addOnScrollListener(mScrollListener);
         }
 
-        switch (item.getItemId()) {
+		mBinder.recyclerviewMovielist.clearOnScrollListeners();
+
+		switch (item.getItemId()) {
             case R.id.menu_item_popular:
                 mSortType = TmdbInterface.SORT_POPULAR;
                 storeSortStatus();
                 clearPosterView();
+				mBinder.recyclerviewMovielist.addOnScrollListener(mScrollListener);
                 loadMovieSearchData();
                 item.setChecked(true);
                 return true;
@@ -320,6 +321,7 @@ public class MovieGridFragment extends Fragment implements TmdbMovieAdapter.Item
                 mSortType = TmdbInterface.SORT_TOP_RATED;
                 storeSortStatus();
                 clearPosterView();
+				mBinder.recyclerviewMovielist.addOnScrollListener(mScrollListener);
                 loadMovieSearchData();
                 item.setChecked(true);
                 return true;
@@ -327,6 +329,7 @@ public class MovieGridFragment extends Fragment implements TmdbMovieAdapter.Item
                 mSortType = TmdbInterface.SORT_NOW_PLAYING;
                 storeSortStatus();
                 clearPosterView();
+				mBinder.recyclerviewMovielist.addOnScrollListener(mScrollListener);
                 loadMovieSearchData();
                 item.setChecked(true);
                 return true;
@@ -334,13 +337,14 @@ public class MovieGridFragment extends Fragment implements TmdbMovieAdapter.Item
                 mSortType = TmdbInterface.SORT_UPCOMING;
                 storeSortStatus();
                 clearPosterView();
+				mBinder.recyclerviewMovielist.addOnScrollListener(mScrollListener);
                 loadMovieSearchData();
                 item.setChecked(true);
                 return true;
             case R.id.menu_item_favorites:
                 mSortType = TmdbInterface.SORT_FAVORITES;
                 storeSortStatus();
-                viewFavorites();
+				viewFavorites();
                 item.setChecked(true);
                 return true;
             default:

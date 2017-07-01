@@ -39,7 +39,6 @@
 	<dimen name="youtube_trailer_height">100dp</dimen>
     <dimen name="youtube_trailer_width">150dp</dimen>
     <dimen name="youtube_icon_padding">25dp</dimen>
-	<dimen name="youtube_icon_start_padding">5dp</dimen>
 
     <!-- buttons -->
     <dimen name="error_button_horizontal_margin">20dp</dimen>
