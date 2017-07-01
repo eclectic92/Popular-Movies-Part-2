@@ -11,4 +11,10 @@
 	<dimen name="movie_details_poster_width">110dp</dimen>
 	<dimen name="movie_details_poster_height">165dp</dimen>
 	<dimen name="movie_details_banner_height">180dp</dimen>
+	<dimen name="youtube_trailer_height">60dp</dimen>
+	<dimen name="youtube_trailer_width">90dp</dimen>
+	<dimen name="youtube_icon_padding">10dp</dimen>
+
+	<!-- text sizes -->
+	<dimen name="movie_details_trailer_text_size">16sp</dimen>
 </resources>

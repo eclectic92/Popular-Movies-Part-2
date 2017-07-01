@@ -2,6 +2,7 @@
 <resources>
     <integer name="movie_details_review_max_lines">3</integer>
     <integer name="movie_details_review_max_length">300</integer>
+	<integer name="movie_details_trailer_max_lines">2</integer>
 	<integer name="movie_details_cast_max_lines">3</integer>
 	<integer name="movie_details_cast_max_length">100</integer>
     <integer name="details_left_column_weight">2</integer>

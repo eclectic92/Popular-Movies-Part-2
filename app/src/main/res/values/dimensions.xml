@@ -31,14 +31,15 @@
     <dimen name="movie_details_small_text_size">16sp</dimen>
     <dimen name="movie_details_summary_title_text_size">20sp</dimen>
     <dimen name="movie_details_expanded_toolbar_text_size">28sp</dimen>
+	<dimen name="movie_details_trailer_text_size">20sp</dimen>
 
-    <!-- image sizes -->
+	<!-- image sizes -->
 	<dimen name="movie_details_poster_width">125dp</dimen>
 	<dimen name="movie_details_poster_height">187dp</dimen>
 	<dimen name="movie_details_banner_height">230dp</dimen>
-	<dimen name="youtube_trailer_height">100dp</dimen>
-    <dimen name="youtube_trailer_width">150dp</dimen>
-    <dimen name="youtube_icon_padding">25dp</dimen>
+	<dimen name="youtube_trailer_height">80dp</dimen>
+    <dimen name="youtube_trailer_width">120dp</dimen>
+    <dimen name="youtube_icon_padding">15dp</dimen>
 
     <!-- buttons -->
     <dimen name="error_button_horizontal_margin">20dp</dimen>

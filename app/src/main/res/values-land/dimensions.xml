@@ -14,4 +14,7 @@
 	<!-- image sizes -->
 	<dimen name="movie_details_poster_width">250dp</dimen>
 	<dimen name="movie_details_poster_height">375dp</dimen>
+
+	<!-- text sizes -->
+	<dimen name="movie_details_trailer_text_size">20sp</dimen>
 </resources>
