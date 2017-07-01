@@ -235,6 +235,9 @@ public class MovieGridFragment extends Fragment implements TmdbMovieAdapter.Item
                 mCurrentPage = savedInstanceState.getInt(CURRENT_PAGE);
                 mIsLastPage = isOnLastPage();
             }
+			if(!mSortType.equals(TmdbInterface.SORT_FAVORITES)){
+				mBinder.recyclerviewMovielist.addOnScrollListener(mScrollListener);
+			}
             updateUi();
         } else{
             if(mSortType == null || mSortType.isEmpty()) {
